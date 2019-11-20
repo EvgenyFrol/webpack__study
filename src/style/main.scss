@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+
+$font-stack: Roboto, sans-serif;
+$color-1: #FFFFFF;
+$color-2: #007765;
+$color-3: #000000;
+$color-4: #333333;
+$back-block-1: url("/images/image.png") no-repeat;
+$back-block-3: url("/images/image-1.png") no-repeat;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+
+@mixin auto-block {
+  width: 100%;
+  padding: 170px 0;
+}
+
+
+html, body {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background: $color-1;
+}
+
+.header {
+  position: fixed;
+  right: 0px;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  background: $color-2;
+  font-family: $font-stack;
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    .header__logo {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 10px;
+    }
+
+    .header__link {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .link__href {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: $color-1;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    a {
+      font-family: $font-stack;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 28px;
+      text-decoration: none;
+      color: $color-1;
+      margin-left: 10px;
+      margin-right: 10px;
+      position: relative;
+
+      &::after {
+        content: "|";
+        position: absolute;
+        top: 0;
+        right: -13px;
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.block__piperNet {
+  @include flex-center;
+  align-items: center;
+  margin-top: 84px;
+  background: $back-block-1;
+  background-size: 100%;
+  padding: 180px 0;
+
+  &--text {
+    font-family: $font-stack;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 84px;
+    color: $color-1;
+    margin: 0;
+  }
+}
+
+
+
+.block__theProblem {
+  width: auto;
+  margin: 0;
+  padding: 20px 25%;
+  background: $color-1;
+  background-size: 100%;
+
+
+  .problem {
+    font-family: $font-stack;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 75px;
+    color: $color-2;
+    text-align: center;
+
+    &--text {
+      font-family: $font-stack;
+      text-align: center;
+      font-weight: normal;
+      font-size: 32px;
+      line-height: 37px;
+      color: $color-3;
+    }
+  }
+}
+
+
+
+
+
+.block__consolidation {
+  width: 100%;
+  padding: 140px 0;
+  margin: 0;
+  background: $back-block-3;
+  background-size: cover;
+
+
+  &--text {
+    font-family: $font-stack;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: $color-1;
+  }
+}
+
+
+.block__piperCoin {
+  width: 100%;
+  padding: 50px 0;
+  font-family: $font-stack;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  color: $color-3;
+  
+
+  &--text {
+    padding: 0 25%;
+  }
+
+  .piperCoin {
+    font-family: $font-stack;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+    color: $color-3;
+  }
+  
+    .piperCoin__wrapper img {
+      float: left;
+      padding-right: 25px;
+    }
+}
+
+
+
+.block__team {
+  padding: 30px 0;
+  padding-bottom: 180px;
+  width: auto;
+
+
+
+  &--text  {
+    font-family: $font-stack;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+    color: $color-2;
+  }
+
+
+    .team {
+      @include flex-center;
+      flex-wrap: wrap;
+    
+
+    .team__employee {
+      display: flex;
+      flex-wrap: wrap;
+
+      .employee__name {
+        font-family: $font-stack;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+        color: $color-2;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-align: center;
+      }
+
+      .employee__job {
+        font-family: $font-stack;
+        font-style: italic;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        color: $color-3;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: 30px 0;
+  background: $color-4;
+  bottom: 0px;
+  position: absolute;
+
+
+  &--text {
+    font-family: $font-stack;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: $color-1;
+    text-align: center;
+  }
+}
