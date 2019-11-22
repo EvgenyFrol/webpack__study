@@ -48,10 +48,7 @@ html, body {
     }
 
     &--h2 {
-        font-family: $font-stack;
-        font-weight: 500;
-        font-size: 64px;
-        line-height: 75px;
+        font: 500 64px/1.2em $font-stack;
         text-align: center;
         color: $color-2;
 
@@ -86,6 +83,16 @@ html, body {
             font-size: 16px;
             line-height: 20px;
         }
+
+        @media (max-width: 580px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        @media (max-width: 386px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
     }
 
     &__job {
@@ -102,8 +109,19 @@ html, body {
             font-size: 14px;
             line-height: 15px;
         }
+
+        @media (max-width: 580px) {
+            font-size: 12px;
+            line-height: 13px;
+        }
+
+        @media (max-width: 386px) {
+            font-size: 10px;
+            line-height: 11px;
+        }
     }
 }
+
 .header {
     position: fixed;
     right: 0px;
@@ -256,7 +274,7 @@ html, body {
     }
 }
 
-.block__theProblem {
+.theProblem__wrapper {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -270,7 +288,7 @@ html, body {
     }
 }
 
-.block__consolidation {
+.consolidation__wrapper {
     width: 100%;
     padding: 140px 0;
     margin: 0;
@@ -292,7 +310,8 @@ html, body {
         background-size: cover;
     }
 
-    &__text {
+    .consolidation__text {
+        font-family: $font-stack;
         font-style: italic;
         font-weight: 500;
         font-size: 48px;
@@ -330,7 +349,7 @@ html, body {
         margin-bottom: 25px;
     }
     
-    &--image {
+    .piperCoin__logo {
         float: left;
         padding-right: 25px;
 
@@ -346,7 +365,7 @@ html, body {
     }
 }
 
-.block__team {
+.team {
     padding: 30px 0;
     padding-bottom: 180px;
     width: auto;
@@ -356,57 +375,63 @@ html, body {
     @media (max-width:720px) {
         padding-bottom: 80px;
     }
-}
 
-.team__wrapper {
-    @include flex-center;
-    padding: 0 15%;
-
-    @media (max-width:720px) {
-        padding: 0 5%;
-    }
-
-    @media (max-width:1920px) {
-        padding: 0 25%;
-    }
-
-    @media (max-width:1560px) {
-        padding: 0 20%;
-    }
-    
-    @media (max-width:1304px) {
+    &__wrapper {
+        @include flex-center;
+        flex-wrap: wrap;
         padding: 0 15%;
-    }
-
-    @media (max-width:1116px) {
-        padding: 0 10%;
-    }
-
-    @media (max-width:978px) {
-        padding: 0 5%;
-    }
-}
-
-.team {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    @media (max-width:720px) {
-        .employee {
-            width: 120px;
-            height: 120px;
+    
+        @media (max-width:720px) {
+            padding: 0 5%;
+        }
+    
+        @media (max-width:1920px) {
+            padding: 0 25%;
+        }
+    
+        @media (max-width:1560px) {
+            padding: 0 20%;
+        }
+        
+        @media (max-width:1304px) {
+            padding: 0 15%;
+        }
+    
+        @media (max-width:1116px) {
+            padding: 0 10%;
+        }
+    
+        @media (max-width:978px) {
+            padding: 0 0;
         }
     }
 
-    @media (max-width:580px) {
-        width: 90px;
-        height: 90px;
+    &__employee {
+        @media (max-width:720px) {
+            .employee {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    
+        @media (max-width:580px) {
+            .employee {
+                width: 90px;
+                height: 90px;
+            }
+        }
+    
+        @media (max-width:386px) {
+            .employee {
+                width: 60px;
+                height: 60px;
+            }
+        }
     }
 
-    @media (max-width:386px) {
-        width: 60px;
-        height: 60px;
+    &__employeeImg {
+        object-fit: contain;
+        font-family: 'object-fit: contain';
     }
 }
 
@@ -416,7 +441,8 @@ html, body {
     background: $color-4;
     margin-bottom: 0px;
     position: relative;
-    &--text {
+
+    &__text {
         font-family: $font-stack;
         font-weight: normal;
         font-size: 18px;
@@ -427,6 +453,11 @@ html, body {
         @media (max-width:720px) {
             font-size: 14px;
             line-height: 17px;
+        }
+
+        @media (max-width: 580px) {
+            font-size: 12px;
+            line-height: 15px;
         }
     }
 }
